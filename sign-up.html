@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <style>
+        @font-face {
+            font-family: "Neue Haas Grotesk";
+            src: url("https://leatherbackstorage.blob.core.windows.net/frontend/fonts/NHaasGroteskTXPro-55Rg.ttf");
+        }
+
+        @font-face {
+            font-family: "Neue Haas Grotesk Semibold";
+            src: url("https://leatherbackstorage.blob.core.windows.net/frontend/fonts/NHaasGroteskTXPro-65Md.ttf");
+        }
+
+        @font-face {
+            font-family: "Neue Haas Grotesk Bold";
+            src: url("https://leatherbackstorage.blob.core.windows.net/frontend/fonts/NHaasGroteskTXPro-75Bd.ttf");
+        }
+
+        body {
+            margin: 0;
+            background-image: url(./assets/bg/bg.png);
+            background-color: #003eff;
+            background-size: cover;
+            font-family: "Neue Haas Grotesk";
+        }
+
+        .container {
+            width: 25%;
+            margin: 0 auto;
+            position: relative;
+            padding-top: 5rem;
+        }
+
+        .logo {
+            width: 35%;
+            margin: 0 auto 4rem;
+        }
+
+        .logo img {
+            width: 100%;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            margin: 0 auto 3rem;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .title {
+            margin-bottom: 3rem;
+        }
+
+        .title h1 {
+            text-align: center;
+            font-family: "Neue Haas Grotesk Semibold";
+            font-size: 24px;
+            color: #1f1f23;
+            margin: 0 0 1rem;
+        }
+
+        .title p {
+            color: #666f77;
+            font-weight: 400;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .form {
+            position: relative;
+        }
+
+        .field {
+            display: flex;
+            padding: 1rem;
+            border: 1px solid rgba(102, 111, 119, 0.1);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .field img {
+            margin-right: 8px;
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+
+        .field input {
+            box-shadow: none;
+            border: none;
+            font-size: 14px;
+        }
+
+        .field input:focus {
+            outline: none;
+        }
+
+        .field input::placeholder {
+            color: #666f77;
+        }
+
+        .field p {
+            margin: 0;
+        }
+
+        .field button {
+            background-color: inherit;
+            border: none;
+            padding: 0;
+            color: #666f77;
+        }
+
+        .country-select-dropdown {
+            position: absolute;
+            top: 100%;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 1rem;
+            border: 1px solid rgba(102, 111, 119, 0.1);
+            margin-top: 0.5rem;
+            width: 91%;
+            z-index: 1000;
+            display: none;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .country-select-dropdown .country-list {
+            height: 200px;
+            overflow-y: scroll;
+            margin-top: 1rem;
+        }
+
+        .country-select-dropdown .country-list .country {
+            padding: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .country-select-dropdown .country-list .country:hover {
+            background: rgba(102, 111, 119, 0.1);
+        }
+
+        .country-code-select-dropdown {
+            position: absolute;
+            top: 100%;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 1rem;
+            border: 1px solid rgba(102, 111, 119, 0.1);
+            margin-top: -0.5rem;
+            width: 105%;
+            z-index: 1000;
+            display: none;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .country-code-select-dropdown .code-list {
+            height: 200px;
+            overflow-y: scroll;
+            margin-top: 1rem;
+        }
+
+        .country-code-select-dropdown .code-list .country {
+            padding: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .country-code-select-dropdown .code-list .country:hover {
+            background: rgba(102, 111, 119, 0.1);
+        }
+
+        .country-search-input {
+            background: #f4f4f4;
+            border: none;
+            width: 93%;
+            padding: 0.8rem;
+            border-radius: 5px;
+        }
+
+        .country-code-search-input {
+            background: #f4f4f4;
+            border: none;
+            width: 78%;
+            padding: 0.8rem;
+            border-radius: 5px;
+        }
+
+        .terms {
+            font-size: 14px;
+            color: #666f77;
+        }
+
+        .btn {
+            background: #f4f4f4;
+            border-radius: 10px;
+            border: none;
+            width: 100%;
+            padding: 1rem;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 22px;
+            color: #a1a5aa;
+        }
+
+        .footer-container {
+            position: absolute;
+            width: 100%;
+            margin: 0 auto;
+            bottom: 2%;
+        }
+
+        .footer-container .footer-content {
+            margin: 0 auto;
+            width: 90%;
+        }
+
+        /* Text Color */
+        .grey {
+            color: #666f77;
+        }
+
+        .blue {
+            color: #003eff;
+        }
+
+        .text-white {
+            color: #ffffff;
+        }
+
+        /* Text Decoration */
+        .no-deco {
+            text-decoration: none;
+        }
+
+        /* Display */
+        .flex {
+            display: flex;
+        }
+
+        /* Justify Content */
+        .space-between {
+            justify-content: space-between;
+        }
+
+        /* Align */
+        .text-center {
+            text-align: center;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        /* Margin */
+        .m-0 {
+            margin: 0;
+        }
+
+        .mt-0 {
+            margin-top: 0;
+        }
+
+        .mr-0 {
+            margin-right: 0;
+        }
+
+        .mb-0 {
+            margin-bottom: 0;
+        }
+
+        .ml-0 {
+            margin-left: 0;
+        }
+
+        /* Padding */
+        .p-0 {
+            padding: 0;
+        }
+
+        .pt-0 {
+            padding-top: 0;
+        }
+
+        .pr-0 {
+            padding-right: 0;
+        }
+
+        .pb-0 {
+            padding-bottom: 0;
+        }
+
+        .pl-0 {
+            padding-left: 0;
+        }
+
+        /* Checkbox styling */
+        .checkbox {
+            position: relative;
+            margin: 1rem 0 3rem;
+        }
+
+        .checkbox input {
+            -webkit-appearance: none;
+            width: 1rem;
+            height: 1rem;
+            border: 1px solid #a1a5aa;
+            border-radius: 3px;
+            vertical-align: sub;
+            position: relative;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .checkbox input:checked {
+            background-color: hsl(0, 0%, 40%);
+            border-color: hsl(0, 0%, 40%);
+        }
+
+        .checkbox input:checked+label {
+            font-weight: 600;
+        }
+
+        .checkbox input:checked:focus,
+        .checkbox input:checked:hover {
+            box-shadow: 0 0 0 3px hsl(0, 0%, 85%);
+            border-color: hsl(0, 0%, 40%);
+        }
+
+        .checkbox input:after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-image: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzMwMHB4JyB3aWR0aD0nMzAwcHgnICBmaWxsPSIjZmZmZmZmIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgdmVyc2lvbj0iMS4xIiB4PSIwcHgiIHk9IjBweCI+PHRpdGxlPmljb25fYnlfUG9zaGx5YWtvdjEwPC90aXRsZT48ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz48ZyBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48ZyBmaWxsPSIjZmZmZmZmIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNi4wMDAwMDAsIDI2LjAwMDAwMCkiPjxwYXRoIGQ9Ik0xNy45OTk5ODc4LDMyLjQgTDEwLjk5OTk4NzgsMjUuNCBDMTAuMjI2Nzg5MSwyNC42MjY4MDE0IDguOTczMTg2NDQsMjQuNjI2ODAxNCA4LjE5OTk4Nzc5LDI1LjQgTDguMTk5OTg3NzksMjUuNCBDNy40MjY3ODkxNCwyNi4xNzMxOTg2IDcuNDI2Nzg5MTQsMjcuNDI2ODAxNCA4LjE5OTk4Nzc5LDI4LjIgTDE2LjU4NTc3NDIsMzYuNTg1Nzg2NCBDMTcuMzY2ODIyOCwzNy4zNjY4MzUgMTguNjMzMTUyOCwzNy4zNjY4MzUgMTkuNDE0MjAxNCwzNi41ODU3ODY0IEw0MC41OTk5ODc4LDE1LjQgQzQxLjM3MzE4NjQsMTQuNjI2ODAxNCA0MS4zNzMxODY0LDEzLjM3MzE5ODYgNDAuNTk5OTg3OCwxMi42IEw0MC41OTk5ODc4LDEyLjYgQzM5LjgyNjc4OTEsMTEuODI2ODAxNCAzOC41NzMxODY0LDExLjgyNjgwMTQgMzcuNzk5OTg3OCwxMi42IEwxNy45OTk5ODc4LDMyLjQgWiI+PC9wYXRoPjwvZz48L2c+PC9nPjwvc3ZnPg==");
+            background-size: 40px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .checkbox input:focus,
+        .checkbox input:hover {
+            box-shadow: 0 0 0 3px hsl(0, 0%, 92%);
+            border-color: hsl(0, 0%, 55%);
+        }
+
+        .checkbox label {
+            font-size: 12px;
+            color: #666f77;
+            margin-left: 2rem;
+            position: absolute;
+            left: 0;
+            top: 5px;
+        }
+
+        /* Phone number */
+        .phone-number {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .phone-number .country-code {
+            width: 85%;
+        }
+
+        .phone-number .number {
+            width: 53%;
+        }
+    </style>
+</head>
+
+<body onload="getAllCountries()">
+    <div class="container">
+        <div class="logo text-center">
+            <a href="https://leatherback.co"><img src="./assets/images/leatherback-logo-white.png"
+                    alt="Leatherback Logo" /></a>
+        </div>
+        <div class="card">
+            <div class="title text-center">
+                <h1>Create your account</h1>
+                <p>Let's get you all set up within minutes</p>
+            </div>
+            <div class="form">
+                <div style="position: relative" id="country-div">
+                    <div class="field" style="
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+              " onclick="toggleCountryDropdown('country')">
+                        <div style="display: flex; align-items: center">
+                            <img src="./assets/icons/Location.svg" />
+                            <p style="
+                    font-size: 14px;
+                    color: #666f77;
+                    display: flex;
+                    align-items: center;
+                  " id="country-placeholder">
+                                Select country of residence/incoporation
+                            </p>
+                        </div>
+                        <img src="./assets/icons/Caret-down.svg" style="width: 0.8rem" />
+                    </div>
+
+                    <div id="country-select-dropdown" class="country-select-dropdown">
+                        <input type="text" placeholder="Search country here" class="country-search-input"
+                            id="search-input" oninput="filterCountries('country')" />
+                        <div id="countries" class="country-list"></div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <img src="./assets/icons/Email.svg" />
+                    <input type="email" placeholder="Email address" />
+                </div>
+                <div class="phone-number">
+                    <div style="position: relative" id="country-code-div">
+                        <div class="country-code field" style="
+                  justify-content: space-between;
+                  align-items: center;
+                  cursor: pointer;
+                " onclick="toggleCountryCodeDropdown('countryCode')">
+                            <img src="./assets/icons/Phone.svg" />
+                            <p style="
+                    font-size: 14px;
+                    color: #666f77;
+                    display: flex;
+                    align-items: center;
+                  " id="country-code-placeholder">
+                                +00
+                            </p>
+                            <img src="./assets/icons/Caret-down.svg" style="width: 0.7rem" />
+                        </div>
+
+                        <div id="country-code-select-dropdown" class="country-code-select-dropdown">
+                            <input type="text" placeholder="Search code" class="country-code-search-input"
+                                id="search-code-input" oninput="filterCountries('country-code')" />
+                            <div id="country-codes" class="code-list"></div>
+                        </div>
+                    </div>
+                    <div class="number field">
+                        <input type="text" placeholder="Phone number" />
+                    </div>
+                </div>
+                <div class="field">
+                    <img src="./assets/icons/Lock.svg" />
+                    <input type="password" placeholder="Create Password" />
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" id="cb3" name="cb3" />
+                    <label for="cb3">By creating account, you agree to accept Leatherback’s
+                        <a href="https://leatherback.co/terms-conditions">Terms & Conditions</a> and
+                        <a href="https://leatherback.co/privacy-policy">Privacy Policy</a></label>
+                </div>
+                <button class="btn text-center">Create account</button>
+            </div>
+        </div>
+        <p class="text-white text-center">
+            Already have an account? <a href="#" class="text-white">Sign in</a>
+        </p>
+    </div>
+    <div class="footer-container text-white">
+        <div class="footer-content flex space-between">
+            <p>@ 2022 Leatherback</p>
+            <p>
+                <a href="https://leatherback.co/privacy-policy" class="no-deco text-white">Privacy Policy</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        var countrySelected = "";
+        var countryCodeSelected = "";
+        var phoneNumber = "";
+        var email = "";
+        var password = "";
+        var allCountries = [];
+        var allCountryCodes = [];
+        var filteredCountries = [];
+        var filteredCountryCodes = [];
+        var y = document.querySelector("#country-code-select-dropdown");
+        var x = document.querySelector("#country-select-dropdown");
+        var countryDiv = document.querySelector("#country-div");
+        var countryCodeDiv = document.querySelector("#country-code-div");
+        const searchInput = document.querySelector("#search-input");
+        const searchCodeInput = document.querySelector("#search-code-input");
+
+        function getAllCountries() {
+            fetch("https://restcountries.com/v2/all")
+                .then((res) => {
+                    return res.json();
+                })
+                .then((data) => {
+                    allCountries = data;
+                    allCountryCodes = data;
+                    filteredCountries = allCountries;
+                    filteredCountryCodes = allCountryCodes;
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        }
+
+        function toggleCountryDropdown(bindType) {
+            filteredCountries = allCountries;
+            searchInput.value = "";
+            y.style.display = "none";
+            setCountriesDropDown(bindType);
+
+            if (x.style.display === "none" || !x.style.display) {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        function toggleCountryCodeDropdown(bindType) {
+            filteredCountryCodes = allCountryCodes;
+            searchCodeInput.value = "";
+            x.style.display = "none";
+            setCountriesDropDown(bindType);
+
+            if (y.style.display === "none" || !y.style.display) {
+                y.style.display = "block";
+            } else {
+                y.style.display = "none";
+            }
+        }
+
+        function setCountriesDropDown(bindType) {
+            const countries =
+                bindType === "country" ? filteredCountries : filteredCountryCodes;
+            const selectDrop =
+                bindType === "country"
+                    ? document.querySelector("#countries")
+                    : document.querySelector("#country-codes");
+
+            let output = "";
+            countries.forEach((country) => {
+                output += `
+                    <div style="display: flex; align-items: center" class="country" onclick="selectCountryOrCode('${country.name
+                    }', '${country.flag}', '${country.callingCodes[0]
+                    }', '${bindType}')">
+                                <img src="${country.flag}" width="20" alt="${country.name
+                    }"
+                                    style="margin-right: 1rem">
+                                <p style="margin: 0; color: #666F77; font-size: 12px;">${bindType === "country"
+                        ? country.name
+                        : `+ ${country.callingCodes[0]}`
+                    }</p>
+                            </div>`;
+            });
+
+            selectDrop.innerHTML = output;
+        }
+
+        function filterCountries(bindType) {
+            if (bindType === "country") {
+                filteredCountries = allCountries.filter((item) =>
+                    item.name.toLowerCase().includes(searchInput.value.toLowerCase())
+                );
+            } else {
+                filteredCountryCodes = allCountryCodes.filter((item) =>
+                    item.name
+                        .toLowerCase()
+                        .includes(searchCodeInput.value.toLowerCase())
+                );
+            }
+            setCountriesDropDown(bindType);
+        }
+
+        function selectCountryOrCode(country, flag, countryCode, bindType) {
+            console.log("entering here", country);
+            if (bindType === "country") {
+                countrySelected = country;
+                document.querySelector(
+                    "#country-placeholder"
+                ).innerHTML = `<img src="${flag}" width="20" alt="${country}"
+                                    style="margin-right: 1rem">
+                                <p style="margin: 0; color: #1f1f23; font-size: 14px;">${country}</p>`;
+                x.style.display = "none";
+            } else {
+                countryCodeSelected = countryCode;
+                document.querySelector(
+                    "#country-code-placeholder"
+                ).innerHTML = `<p style="margin: 0; color: #1f1f23; font-size: 14px;">+${countryCode}</p>`;
+                y.style.display = "none";
+            }
+        }
+
+        document.addEventListener("click", function (e) {
+            if (!countryDiv.contains(e.target)) {
+                x.style.display = "none";
+            }
+            if (!countryCodeDiv.contains(e.target)) {
+                y.style.display = "none";
+            }
+        });
+    </script>
+</body>
+
+</html>

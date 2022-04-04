@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .button-cover,
+        .knobs,
+        .layer {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        .button {
+            position: relative;
+            top: 50%;
+            width: 300px;
+            border-radius: 8px;
+            height: 50px;
+            margin: -20px auto 0 auto;
+            overflow: hidden;
+        }
+
+        .button.r,
+        .button.r .layer {
+            border-radius: 100px;
+        }
+
+        .checkbox {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 3;
+        }
+
+        .knobs {
+            z-index: 2;
+            background: #F4F4F4;
+        }
+
+
+        /* Button 10 */
+        #button-10 .knobs:before,
+        #button-10 .knobs:after,
+        #button-10 .knobs span {
+            position: absolute;
+            top: 6px;
+            width: 150px;
+            height: 20px;
+            font-size: 10px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1;
+            padding: 9px 4px;
+            border-radius: 8px;
+            transition: 0.3s ease all;
+        }
+
+        #button-10 .knobs:before {
+            content: '';
+        }
+
+        #button-10 .knobs:after {
+            content: 'Phone number';
+            right: 4px;
+            margin-top: 6px;
+        }
+
+        #button-10 .knobs span {
+            display: inline-block;
+            left: 4px;
+            margin-top: 6px;
+            z-index: 1;
+        }
+
+        #button-10 .checkbox:checked+.knobs span {
+            color: #4e4e4e;
+        }
+
+        #button-10 .checkbox:checked+.knobs:before {
+            left: 45%;
+            background-color: #003EFF;
+        }
+
+        #button-10 .checkbox:checked+.knobs:after {
+            color: #fff;
+        }
+
+        #button-10 .checkbox:checked~.layer {
+            background-color: #fcebeb;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="button-cover">
+        <div class="button b2" id="button-10">
+            <input type="checkbox" class="checkbox">
+            <div class="knobs">
+                <span>Email address</span>
+            </div>
+            <div class="layer"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
