@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Email Verified</title>
+    <title>Product Select</title>
     <style>
       @font-face {
         font-family: "Neue Haas Grotesk";
@@ -23,15 +23,20 @@
 
       .container {
         margin: 5rem 0 0 0;
+        font-family: "Neue Haas Grotesk";
       }
-
+      .logo {
+        margin-bottom: 40px;
+      }
       .logo img {
         width: 190px;
         height: max-content;
       }
-
-      .info {
-        background-color: #daf0fa;
+      .description {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 40px;
       }
 
       .cards {
@@ -43,24 +48,56 @@
       .card-1 {
         width: 400px;
         margin-right: 20px;
+        border-radius: 10px;
+      }
+      .header {
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(102, 111, 119, 0.1);
+      }
+      .right-arrow {
+        padding-top: 16px;
+      }
+      .right-arrow img {
+        width: 32px;
+        height: 32px;
       }
 
       .card-bottom {
-        height: 248px;
+        padding-right: 32px;
+        padding-left: 32px;
+      }
+      .info {
+        background-color: #daf0fa;
+        padding-top: 40px;
       }
 
       .dev-portal {
+        padding-top: 40%;
         background-color: #ffe8ea;
+        padding-bottom: 5%;
       }
-
+      .desc {
+        margin-top: 20%;
+      }
       .pay-r {
+        padding-top: 40%;
+        padding-bottom: 5%;
         background-color: #fff6e4;
       }
 
       .image img {
         width: 400px;
       }
-
+      /* Text Deco */
+      .text-natural {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 30px;
+      }
+      /* Color */
+      .grey {
+        color: #666f77;
+      }
       /* Display  */
       .flex {
         display: flex;
@@ -101,72 +138,56 @@
         margin-left: auto;
         margin-right: auto;
       }
-
-      .my-auto {
-        margin: auto;
-      }
-
-      .mt-0 {
-        margin-top: 0;
-      }
-
-      .mr-0 {
-        margin-right: 0;
-      }
-
-      .mb-0 {
-        margin-bottom: 0;
-      }
-
-      .ml-0 {
-        margin-left: 0;
-      }
     </style>
   </head>
 
   <body>
     <div class="container">
-      <div class="logo text-center">
-        <img src="./assets/images/leatherback-logo-blue.png" alt="" />
+      <div>
+        <div class="logo text-center">
+          <img src="./assets/images/leatherback-logo-blue.png" alt="" />
+        </div>
+        <div class="hero m-auto text-center">
+          <h2>Chose one product to continue</h2>
+          <p class="description grey">
+            Select one of the product below to access your dashboard
+          </p>
+        </div>
       </div>
-      <div class="hero m-auto text-center">
-        <h2>chose one product to continue</h2>
-        <p>Select one of the product below to access your dashboard</p>
-      </div>
+
       <div class="cards">
-        <div class="card-1">
+        <div class="card-1" style="background-color: #daf0fa">
           <div class="image">
             <img src="./assets/sign-up/Leatherback.png" alt="" />
           </div>
           <div class="card-bottom info">
-            <div class="flex justify-between">
+            <div class="flex justify-between header">
               <div class="block m-0">
                 <p class="m-0">01.</p>
                 <h2 class="m-0">Leatherback</h2>
               </div>
-              <div class="m-0">></div>
+              <div class="m-0 right-arrow">
+                <img src="./assets/icons/Arrow.png" alt="" />
+              </div>
             </div>
             <div>
-              <p>
+              <p class="grey text-natural desc">
                 Easy-to-use multi-currency account optimized for Individuals,
                 SMEs, local corporations.
               </p>
             </div>
           </div>
         </div>
-        <div class="card-1">
+        <div class="card-1" style="background-color: #ffe8ea">
           <div class="image">
             <img src="./assets/sign-up/DEV.png" alt="" />
           </div>
           <div class="card-bottom dev-portal">
-            <div>
-              <p>02.</p>
-              <h2>Dev Portal</h2>
-            </div>
+            <p>02.</p>
+            <h2>Dev Portal</h2>
           </div>
         </div>
-
-        <div class="card-1">
+        <div class="card-1" style="background-color: #fff6e4">
           <div class="image">
             <img src="./assets/sign-up/PayR.png" alt="" />
           </div>

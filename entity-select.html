@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Email Verified</title>
+    <title>Select Entity</title>
     <style>
       @font-face {
         font-family: "Neue Haas Grotesk";
@@ -20,17 +20,26 @@
         font-family: "Neue Haas Grotesk Bold";
         src: url("https://leatherbackstorage.blob.core.windows.net/frontend/fonts/NHaasGroteskTXPro-75Bd.ttf");
       }
-
+      body {
+        background-image: url(./assets/bg/bg-2.png);
+        background-size: cover;
+      }
       .container {
         margin: 5rem 0 0 0;
+        font-family: "Neue Haas Grotesk";
       }
-
+      .logo {
+        margin-bottom: 40px;
+      }
       .logo img {
-        width: 180px;
+        width: 190px;
+        height: max-content;
       }
-
-      .info {
-        background-color: #daf0fa;
+      .description {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 40px;
       }
 
       .cards {
@@ -40,33 +49,53 @@
       }
 
       .card-1 {
-        width: 400px;
-        margin-right: 20px;
+        width: 341px;
+        margin-right: 2rem;
+        padding: 2.5rem 32px 1rem 32px;
+        border-radius: 10px;
+      }
+      .header {
+        border-bottom: 1px solid rgba(102, 111, 119, 0.1);
+      }
+      .number {
+        margin: 0 0 8px 0;
+      }
+      .right-arrow {
+        padding-top: 30px;
+      }
+      .right-arrow img {
+        width: 32px;
+        height: 32px;
+      }
+      .lorem {
+        margin-top: 24px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 30px;
+        color: #666f77;
+      }
+      .required-docs {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 160%;
+        text-transform: uppercase;
       }
 
-      .card-details {
-        height: 248px;
+      /* Text Deco */
+      .text-natural {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 30px;
       }
-
-      .dev-portal {
-        background-color: #ffe8ea;
+      /* Color */
+      .grey {
+        color: #666f77;
       }
-
-      .pay-r {
-        background-color: #fff6e4;
-      }
-
-      .image img {
-        width: 400px;
-      }
-
       /* Display  */
       .flex {
         display: flex;
-      }
-
-      .block {
-        display: block;
       }
 
       /* Justify Content  */
@@ -100,70 +129,117 @@
         margin-left: auto;
         margin-right: auto;
       }
-
-      .my-auto {
-        margin: auto;
+      .mb-40 {
+        margin-bottom: 2.5rem;
       }
-
-      .mt-0 {
-        margin-top: 0;
+      .mb-24 {
+        margin-bottom: 1.5rem;
       }
-
-      .mr-0 {
-        margin-right: 0;
+      .mb-20 {
+        margin-bottom: 20px;
       }
-
-      .mb-0 {
-        margin-bottom: 0;
+      .mb-16 {
+        margin-bottom: 1rem;
       }
-
-      .ml-0 {
-        margin-left: 0;
+      ul {
+        padding: 0 24px;
+      }
+      li {
+        margin-bottom: 16px;
+        color: #666f77;
       }
     </style>
   </head>
 
   <body>
     <div class="container">
-      <div class="logo text-center">
-        <img src="./assets/images/leatherback-logo-blue.png" alt="" />
+      <div>
+        <div class="logo text-center">
+          <img src="./assets/images/leatherback-logo-blue.png" alt="" />
+        </div>
+        <div class="hero m-auto text-center">
+          <h2>Select an Entity type</h2>
+          <p class="description grey">
+            Choose an enttity and let us c
+          </p>
+        </div>
       </div>
-      <div class="hero m-auto text-center">
-        <h2>Select an Entity type</h2>
-        <p>Choose an enttity and let us c</p>
-      </div>
+
       <div class="cards">
-        <div class="card-1">
-          <div class="card-details info">
-            <div class="flex justify-between">
-              <div class="block">
-                <p>01.</p>
-                <h2>Leatherback</h2>
+        <div class="card-1 individual" style="background-color: #daf0fa">
+          <div class="header">
+            <div class="flex justify-between mb-16">
+              <div class="block m-0">
+                <p class="number">01.</p>
+                <h2 class="">Individuals</h2>
               </div>
-              <div>></div>
-            </div>
-            <div>
-              <p>
-                Easy-to-use multi-currency account optimized for Individuals,
-                SMEs, local corporations.
-              </p>
+              <div class="m-0 right-arrow">
+                <img src="./assets/icons/Arrow.png" alt="" />
+              </div>
             </div>
           </div>
-        </div>
-        <div class="card-1">
-          <div class="card-details pay-r">
-            <div>
-              <p>03.</p>
-              <h2>PayR</h2>
-            </div>
+          <div class="mb-24 lorem">
+            <p>Sed porttitor lectus nibh. Vivamus magna justo.</p>
+          </div>
+          <div>
+            <h2 class="mb-16 required-docs">documents required to onboard</h2>
+            <ul>
+              <li>Proof of ID *</li>
+              <li>Proof of Address *</li>
+            </ul>
           </div>
         </div>
-        <div class="card-1">
-          <div class="card-details dev-portal">
-            <div>
-              <p>02.</p>
-              <h2>Dev Portal</h2>
+        <div class="card-1 sole-trader" style="background-color: #fff6e4">
+          <div class="header">
+            <div class="flex justify-between mb-16">
+              <div class="block m-0">
+                <p class="number">02.</p>
+                <h2 class="">Sole trader</h2>
+              </div>
+              <div class="m-0 right-arrow">
+                <img src="./assets/icons/Arrow.png" alt="" />
+              </div>
             </div>
+          </div>
+          <div class="mb-24 lorem">
+            <p>Sed porttitor lectus nibh. Vivamus magna justo.</p>
+          </div>
+          <div>
+            <h2 class="mb-16 required-docs">documents required to onboard</h2>
+            <ul>
+              <li>IDs of Promoters</li>
+              <li>Incorporation Document</li>
+              <li>Other Constitutive Documents</li>
+              <li>Business Proof of Address</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-1 corporate" style="background-color: #ffe8ea">
+          <div class="header">
+            <div class="flex justify-between mb-16">
+              <div class="block m-0">
+                <p class="number">03.</p>
+                <h2 class="">Corporate</h2>
+              </div>
+              <div class="m-0 right-arrow">
+                <img src="./assets/icons/Arrow.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="mb-24 lorem">
+            <p>Sed porttitor lectus nibh. Vivamus magna justo.</p>
+          </div>
+          <div>
+            <h2 class="mb-16 required-docs">documents required to onboard</h2>
+            <ul>
+              <li>IDs of Directors *</li>
+              <li>IDs of Shareholders *</li>
+              <li>Incorporation Document *</li>
+              <li>Proof of Source of Wealth/Funds</li>
+              <li>Business Proof of Address *</li>
+              <li>ID of Authorised Signatory *</li>
+              <li>Other Constitutive Documents</li>
+            </ul>
           </div>
         </div>
       </div>
