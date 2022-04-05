@@ -2,87 +2,101 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign In</title>
     <style>
+        @font-face {
+            font-family: "Neue Haas Grotesk";
+            src: url("https://leatherbackstorage.blob.core.windows.net/frontend/fonts/NHaasGroteskTXPro-55Rg.ttf");
+        }
+
+        @font-face {
+            font-family: "Neue Haas Grotesk Semibold";
+            src: url("https://leatherbackstorage.blob.core.windows.net/frontend/fonts/NHaasGroteskTXPro-65Md.ttf");
+        }
+
+        @font-face {
+            font-family: "Neue Haas Grotesk Bold";
+            src: url("https://leatherbackstorage.blob.core.windows.net/frontend/fonts/NHaasGroteskTXPro-75Bd.ttf");
+        }
+
         body {
             margin: 0;
             background-image: url(./assets/bg/bg.png);
             background-color: #003eff;
             background-size: cover;
+            font-family: "Neue Haas Grotesk";
         }
 
         .container {
-            margin-top: 80px;
-            margin-bottom: 20px;
-            padding: 0 98px;
-            overflow-y: hidden;
+            width: 25%;
+            margin: 0 auto;
+            position: relative;
+            padding-top: 5rem;
         }
 
         .logo {
-            color: #FFFFFF;
-            margin: 0 0 4.25rem 0;
+            width: 35%;
+            margin: 0 auto 4rem;
+        }
+
+        .logo img {
+            width: 100%;
         }
 
         .card {
-            background: #FFFFFF;
+            background: #fff;
             border-radius: 10px;
-            width: 450px;
-            height: 450px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 28px 26px 36px 26px;
+            margin: 0 auto 3rem;
+            padding: 4rem 2rem 2rem;
         }
 
         .title {
-            padding: 44px 0 32px 0;
-            font-family: 'Neue Haas Grotesk Text Pro';
+            margin-bottom: 3rem;
         }
 
         .title h1 {
             text-align: center;
-            margin: 0 0 16px 0;
-            height: 40px;
-            font-style: normal;
-            font-weight: 500;
-            font-size: 32px;
-            line-height: 40px;
-            color: #1F1F23;
+            font-family: "Neue Haas Grotesk Semibold";
+            font-size: 24px;
+            color: #1f1f23;
+            margin: 0 0 1rem;
         }
 
         .title p {
-            color: #666F77;
+            color: #666f77;
             font-weight: 400;
-            font-size: 16px;
-            line-height: 20px;
-        }
-
-        .toggle {
+            font-size: 14px;
             margin: 0;
         }
 
-        .toggle p {
-            margin: 0;
+        .form {
+            position: relative;
         }
 
         .field {
             display: flex;
-            margin: 24px 22px 0;
-            padding: 12px 20px;
+            padding: 1rem;
             border: 1px solid rgba(102, 111, 119, 0.1);
             border-radius: 10px;
+            margin-bottom: 1rem;
         }
 
         .field img {
             margin-right: 8px;
+            width: 1.25rem;
+            height: 1.25rem;
         }
 
         .field input {
             box-shadow: none;
             border: none;
-            width: full;
+            font-size: 13px;
+            letter-spacing: .2px;
+            width: 100%;
+            font-family: 'Neue Haas Grotesk';
         }
 
         .field input:focus {
@@ -97,49 +111,78 @@
             background-color: inherit;
             border: none;
             padding: 0;
-            color: #666F77;
+            color: #666f77;
+        }
+
+        .country-code-select-dropdown {
+            position: absolute;
+            top: 100%;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 1rem;
+            border: 1px solid rgba(102, 111, 119, 0.1);
+            margin-top: 0.5rem;
+            left: 0;
+            width: 105%;
+            z-index: 1000;
+            display: none;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .country-code-select-dropdown .code-list {
+            height: 200px;
+            overflow-y: scroll;
+            margin-top: 1rem;
+        }
+
+        .country-code-select-dropdown .code-list .country {
+            padding: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .country-code-select-dropdown .code-list .country:hover {
+            background: rgba(102, 111, 119, 0.1);
+        }
+
+        .country-code-search-input {
+            background: #f4f4f4;
+            border: none;
+            width: 78%;
+            padding: 0.8rem;
+            border-radius: 5px;
         }
 
         .terms {
-            margin: 0 22px;
-        }
-
-        .terms img {
-            width: 24px;
-            height: 24px;
-            margin: 1rem 1rem 0 0;
+            font-size: 14px;
+            color: #666f77;
         }
 
         .btn {
-            background: #F4F4F4;
+            background: #f4f4f4;
             border-radius: 10px;
-            margin: 48px 22px 0;
-            padding: 24px 0;
-            font-weight: 400;
-            font-size: 24px;
+            border: none;
+            width: 100%;
+            padding: 1rem;
+            font-weight: 500;
+            font-size: 16px;
             line-height: 22px;
-            color: #A1A5AA;
+            cursor: pointer;
+            color: #a1a5aa;
         }
 
-        .btn-1 {
-            justify-content: space-between;
+        .footer-container {
+            width: 100%;
+            margin: 10rem auto 1rem;
         }
 
-        .footer {
-            margin-top: 4rem;
+        .footer-container .footer-content {
+            margin: 0 auto;
+            width: 90%;
         }
 
-        /* Text Color */
-        .grey {
-            color: #666F77;
-        }
-
-        .blue {
-            color: #003eff;
-        }
-
-        .white {
-            color: #FFFFFF;
+        .text-white {
+            color: #ffffff;
         }
 
         /* Text Decoration */
@@ -147,107 +190,458 @@
             text-decoration: none;
         }
 
-        /* Display */
-        .flex {
-            display: flex;
-        }
-
-        /* Justify Content */
-        .space-between {
-            justify-content: space-between;
-        }
-
         /* Align */
         .text-center {
             text-align: center;
         }
 
-        /* Margin */
-        .m-0 {
+        /* Phone number */
+        .phone-number {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .phone-number .country-code {
+            width: 30%;
+            margin-right: 4%;
+        }
+
+        .phone-number .number {
+            width: 66%;
+        }
+
+        .password-btn {
+            padding: 5px 1rem !important;
+            font-size: 12px;
+            text-align: center;
+            font-weight: 500;
+            position: absolute;
+            right: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .password-check-area {
+            display: none;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .password-check-area .password-check-item {
+            font-size: 12px;
+            border-radius: 5px;
+            color: #A1A5AA;
+            padding: 5px 0;
+            text-align: center;
+            border: 1px solid rgba(161, 165, 170, 0.2);
+        }
+
+        /* Toggle CSS */
+        .button-cover {
+            margin-top: -1rem;
+            margin-bottom: 2rem;
+        }
+
+        .knobs,
+        .layer {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        .button {
+            position: relative;
+            top: 50%;
+            width: 300px;
+            border-radius: 10px;
+            height: 50px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .button.r,
+        .button.r .layer {
+            border-radius: 100px;
+        }
+
+        .checkbox {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding: 0;
             margin: 0;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 3;
         }
 
-        .mt-0 {
-            margin-top: 0;
+        .knobs {
+            z-index: 2;
+            background: #F4F4F4;
         }
 
-        .mr-0 {
-            margin-right: 0;
+
+        /* Button 10 */
+        #button-10 .knobs:before,
+        #button-10 .knobs:after,
+        #button-10 .knobs span {
+            position: absolute;
+            top: 6px;
+            width: 140px;
+            height: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1;
+            padding: 9px 4px;
+            border-radius: 5px;
+            transition: 0.3s ease all;
         }
 
-        .mb-0 {
-            margin-bottom: 0;
+        #button-10 .knobs:before {
+            content: '';
+            background: #003EFF;
+            margin-left: 8px;
         }
 
-        .ml-0 {
-            margin-left: 0;
+        #button-10 .knobs:after {
+            content: 'Phone number';
+            right: 4px;
+            margin-top: 6px;
         }
 
-        /* Padding */
-        .p-0 {
-            Padding: 0;
+        #button-10 .knobs span {
+            display: inline-block;
+            left: 4px;
+            margin-top: 6px;
+            z-index: 1;
+            color: white;
         }
 
-        .pt-0 {
-            Padding-top: 0;
+        #button-10 .checkbox:checked+.knobs span {
+            color: #4e4e4e;
         }
 
-        .pr-0 {
-            Padding-right: 0;
+        #button-10 .checkbox:checked+.knobs:before {
+            left: 45%;
+            background-color: #003EFF;
         }
 
-        .pb-0 {
-            Padding-bottom: 0;
+        #button-10 .checkbox:checked+.knobs:after {
+            color: #fff;
         }
 
-        .pl-0 {
-            Padding-left: 0;
+        #button-10 .checkbox:checked~.layer {
+            background-color: #fcebeb;
+        }
+
+        /* Responsive Code */
+        @media only screen and (max-width: 1390px) {
+            .container {
+                width: 30%;
+            }
+        }
+
+        @media only screen and (max-width: 1180px) {
+            .container {
+                width: 35%;
+            }
+        }
+
+        @media only screen and (max-width: 1070px) {
+            .container {
+                width: 40%;
+            }
+        }
+
+        @media only screen and (max-width: 940px) {
+            .container {
+                width: 45%;
+            }
+        }
+
+        @media only screen and (max-width: 780px) {
+            .container {
+                width: 50%;
+            }
+        }
+
+        @media only screen and (max-width: 660px) {
+            .container {
+                width: 60%;
+            }
+        }
+
+        @media only screen and (max-width: 580px) {
+            .container {
+                width: 70%;
+            }
+        }
+
+        @media only screen and (max-width: 520px) {
+            .container {
+                width: 80%;
+            }
         }
     </style>
 </head>
 
-<body>
+<body onload="getAllCountries()">
     <div class="container">
         <div class="logo text-center">
-            <h2>leatherback</h2>
+            <a href="https://leatherback.co"><img src="./assets/images/leatherback-logo-white.png"
+                    alt="Leatherback Logo" /></a>
         </div>
         <div class="card">
             <div class="title text-center">
                 <h1>Sign in</h1>
                 <p>Enter your account credentials to sign in</p>
             </div>
-            <div class="toggle text-center">
-                <p>toggle icon</p>
-            </div>
-            <div class="">
-                <div class="field">
-                    <img src="./assets/icons/Email.svg" alt="">
-                    <input type="email" placeholder="Email address">
-                </div>
-                <div class="field">
-                    <img src="./assets/icons/Lock.svg" alt="">
-                    <input type="password" placeholder="Create Password">
-                </div>
-                <div class="btn text-center">
-                    Log in
+            <div class="button-cover">
+                <div class="button b2" id="button-10">
+                    <input type="checkbox" class="checkbox" id="checkbox" onclick="togglePhoneNumberOrEmail()">
+                    <div class="knobs">
+                        <span>Email address</span>
+                    </div>
+                    <div class="layer"></div>
                 </div>
             </div>
-        </div>
-        <div class="footer flex space-between white">
-            <div>
-                <p>@ 2022 Leatherback</p>
-            </div>
-            <div>
-                <p>Already have an account? <a href="#" class="white">Sign in</a></p>
-            </div>
-            <div>
-                <p> 
-                    <a href="#" class="no-deco white">Privacy Policy</a>
+            <div class="form">
+                <div id="show-email">
+                    <div class="field" id="email-field">
+                        <img src="./assets/icons/Email.svg" />
+                        <input type="email" placeholder="Email address" id="email" onblur="validateEmailAddress()" oninput="validateEmailAddress()" />
+                    </div>
+                    <p style="font-size: 12px; margin: 5px 0 1rem; color: red; display: none;" id="not-email">Please enter a valid email address</p>
+                </div>
+
+                <div id="show-phone-number">
+                    <div class="phone-number">
+                        <div class="country-code field" style="position: relative" id="country-code-div">
+                            <div style="
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                cursor: pointer;
+                                width: 100%;
+                                " onclick="toggleCountryCodeDropdown('countryCode')">
+                                <img src="./assets/icons/Phone.svg" />
+                                <p style="
+                                    font-size: 13px;
+                                    color: #666f77;
+                                    display: flex;
+                                    align-items: center; font-family: 'Neue Haas Grotesk Semibold';
+                                " id="country-code-placeholder">
+                                    +00
+                                </p>
+                                <img src="./assets/icons/Caret-down.svg" style="width: 0.7rem" />
+                            </div>
+    
+                            <div id="country-code-select-dropdown" class="country-code-select-dropdown">
+                                <input type="text" placeholder="Search code" class="country-code-search-input"
+                                    id="search-code-input" oninput="filterCountries('country-code')" style="width: 80%;" />
+                                <div id="country-codes" class="code-list"></div>
+                            </div>
+                        </div>
+                        <div class="number field" id="phone-number-field">
+                            <input type="text" placeholder="Phone number" id="phone-number" onblur="validatePhoneNumber()" oninput="validatePhoneNumber()" />
+                        </div>
+                    </div>
+                    <p style="font-size: 12px; margin: -2px 0 1rem; color: red; display: none;" id="not-number">Please enter a valid phone number</p>
+                </div>
+
+                <div class="field" style="position: relative;">
+                    <img src="./assets/icons/Lock.svg" />
+                    <input type="password" placeholder="Create Password" id="password-input" oninput="performPasswordCheck()" />
+                    <button class="password-btn" id="password-btn" onclick="togglePasswordVisibility()" style="background: #e6fff0; color: #2DB260;">
+                        show
+                    </button>
+                </div>
+                <button class="btn text-center" id="submit-btn" disabled>Log in</button>
+                <p class="text-center" style="color: #666F77; font-size: 12px; margin-top: 2rem;">
+                    Forgot your password? <a href="#" style="color: #003EFF">Request reset link</a>
                 </p>
             </div>
-
+        </div>
+        <p class="text-white text-center">
+            Don't have an account? <a href="#" class="text-white">Sign up</a>
+        </p>
+    </div>
+    <div class="footer-container text-white">
+        <div class="footer-content" style="display: flex; justify-content: space-between;">
+            <p>@ 2022 Leatherback</p>
+            <p>
+                <a href="https://leatherback.co/privacy-policy" class="no-deco text-white">Privacy Policy</a>
+            </p>
         </div>
     </div>
+
+    <script>
+        var countryCodeSelected = "";
+        var password = "";
+        var allCountryCodes = [];
+        var filteredCountryCodes = [];
+        var passwordVisibility = false;
+        var y = document.querySelector("#country-code-select-dropdown");
+        var countryCodeDiv = document.querySelector("#country-code-div");
+        const searchCodeInput = document.querySelector("#search-code-input");
+        const passwordBtn = document.querySelector('#password-btn');
+        const passwordInput = document.querySelector('#password-input');
+        const email = document.querySelector('#email');
+        var emailIsValid = false;
+        const phoneNumber = document.querySelector('#phone-number');
+        var phoneNumberIsValid = false;
+        const submitBtn = document.querySelector('#submit-btn');
+        const checkbox = document.querySelector('#checkbox');
+        const showEmail = document.querySelector('#show-email');
+        const showPhoneNumber = document.querySelector('#show-phone-number');
+
+        if(checkbox.checked) {
+            showPhoneNumber.style.display = 'block';
+            showEmail.style.display = 'none';
+        } else {
+            showPhoneNumber.style.display = 'none';
+            showEmail.style.display = 'block';
+        }
+
+        function togglePhoneNumberOrEmail() {
+            if(checkbox.checked) {
+                showPhoneNumber.style.display = 'block';
+                showEmail.style.display = 'none';
+            } else {
+                showPhoneNumber.style.display = 'none';
+                showEmail.style.display = 'block';
+            }
+        }
+
+        function getAllCountries() {
+            fetch("https://restcountries.com/v2/all")
+                .then((res) => {
+                    return res.json();
+                })
+                .then((data) => {
+                    allCountryCodes = data;
+                    filteredCountryCodes = allCountryCodes;
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        }
+
+        function toggleCountryCodeDropdown() {
+            filteredCountryCodes = allCountryCodes;
+            searchCodeInput.value = "";
+            setCountriesDropDown();
+
+            if (y.style.display === "none" || !y.style.display) {
+                y.style.display = "block";
+            } else {
+                y.style.display = "none";
+            }
+        }
+
+        function setCountriesDropDown() {
+            const selectDrop = document.querySelector("#country-codes");
+
+            let output = "";
+            filteredCountryCodes.forEach((country) => {
+                output += `
+                  <div style="display: flex; align-items: center" class="country" onclick="selectCode('${country.name
+                    }', '${country.flag}', '${country.callingCodes[0]
+                    }')">
+                              <img src="${country.flag}" width="20" alt="${country.name
+                    }"
+                                  style="margin-right: 1rem">
+                              <p style="margin: 0; color: #666F77; font-size: 12px;">+ ${country.callingCodes[0]}</p>
+                          </div>`;
+            });
+
+            selectDrop.innerHTML = output;
+        }
+
+        function filterCountries() {
+            filteredCountryCodes = allCountryCodes.filter((item) =>
+                    item.name
+                        .toLowerCase()
+                        .includes(searchCodeInput.value.toLowerCase())
+                );
+            setCountriesDropDown();
+        }
+
+        function selectCode(country, flag, countryCode) {
+            countryCodeSelected = countryCode;
+                document.querySelector(
+                    "#country-code-placeholder"
+                ).innerHTML = `<p style="margin: 0; color: #1f1f23; font-size: 14px;">+${countryCode}</p>`;
+                y.style.display = "none";
+        }
+
+        document.addEventListener("click", function (e) {
+            if (!countryCodeDiv.contains(e.target)) {
+                y.style.display = "none";
+            }
+        });
+
+        document.addEventListener("input", function (e) {
+            if(((checkbox.checked && phoneNumber.value.length > 0 && phoneNumberIsValid && countryCodeSelected.length > 0) || (!checkbox.checked && email.value.length > 0 && emailIsValid)) && passwordInput.value.length >= 8) {
+                submitBtn.disabled = false;
+                submitBtn.style.background = '#003EFF';
+                submitBtn.style.color = '#ffffff';
+            } else {
+                submitBtn.disabled = true;
+                submitBtn.style.background = '#f4f4f4';
+                submitBtn.style.color = '#a1a5aa';
+            }
+        });
+
+        function togglePasswordVisibility() {
+            if(!passwordVisibility) {
+                passwordVisibility = true;
+                passwordBtn.style.background = '#ffcccb';
+                passwordBtn.style.color = 'red'
+                passwordBtn.innerHTML = 'hide'
+                passwordInput.type = 'text'
+            } else {
+                passwordVisibility = false;
+                passwordBtn.style.background = '#E6FFF0';
+                passwordBtn.style.color = '#2DB260'
+                passwordBtn.innerHTML = 'show'
+                passwordInput.type = 'password'
+            }
+        }
+
+        function validateEmailAddress() {
+            const emailField = document.querySelector('#email-field');
+            const notEmail = document.querySelector('#not-email');
+
+            if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)) {
+                emailField.style.border = '1px solid red';
+                notEmail.style.display = 'block'
+                emailIsValid = false;
+            } else {
+                emailField.style.border = '1px solid rgba(102, 111, 119, 0.1)';
+                notEmail.style.display = 'none'
+                emailIsValid = true;
+            }
+        }
+
+        function validatePhoneNumber() {
+            const phoneNumberField = document.querySelector('#phone-number-field');
+            const notNumber = document.querySelector('#not-number');
+
+            if(!/^[0-9]*$/.test(phoneNumber.value)) {
+                phoneNumberField.style.border = '1px solid red';
+                notNumber.style.display = 'block'
+                phoneNumberIsValid = false;
+            } else {
+                phoneNumberField.style.border = '1px solid rgba(102, 111, 119, 0.1)';
+                notNumber.style.display = 'none'
+                phoneNumberIsValid = true;
+            }
+        }
+    </script>
 </body>
 
 </html>

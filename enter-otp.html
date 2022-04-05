@@ -1,204 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Enter OTP</title>
     <style>
-        body {
-            margin: 0;
-            background-image: url(./assets/bg/bg.png);
-            background-color: #003eff;
-            background-size: cover;
-        }
+      @font-face {
+        font-family: "Neue Haas Grotesk";
+        src: url("https://leatherbackstorage.blob.core.windows.net/frontend/fonts/NHaasGroteskTXPro-55Rg.ttf");
+      }
 
+      @font-face {
+        font-family: "Neue Haas Grotesk Semibold";
+        src: url("https://leatherbackstorage.blob.core.windows.net/frontend/fonts/NHaasGroteskTXPro-65Md.ttf");
+      }
+
+      @font-face {
+        font-family: "Neue Haas Grotesk Bold";
+        src: url("https://leatherbackstorage.blob.core.windows.net/frontend/fonts/NHaasGroteskTXPro-75Bd.ttf");
+      }
+
+      body {
+        margin: 0;
+        background-image: url(./assets/bg/bg.png);
+        background-color: #003eff;
+        background-size: cover;
+        font-family: "Neue Haas Grotesk";
+      }
+
+      .container {
+        width: 25%;
+        margin: 0 auto;
+        position: relative;
+        padding-top: 5rem;
+      }
+
+      .logo {
+        width: 35%;
+        margin: 0 auto 4rem;
+      }
+
+      .logo img {
+        width: 100%;
+      }
+
+      .card {
+        background: #fff;
+        border-radius: 10px;
+        margin: 0 auto 3rem;
+        padding: 4rem 2rem 2rem;
+      }
+
+      .title {
+        margin-bottom: 3rem;
+      }
+
+      .title h1 {
+        text-align: center;
+        font-family: "Neue Haas Grotesk Semibold";
+        font-size: 24px;
+        color: #1f1f23;
+        margin: 0 0 1rem;
+      }
+
+      .title p {
+        color: #666f77;
+        font-weight: 400;
+        font-size: 14px;
+        margin: 0;
+      }
+
+      .form {
+        position: relative;
+      }
+
+      input {
+        box-shadow: none;
+        border: none;
+        width: 70%;
+        margin: 0 auto 3rem;
+        font-family: "Neue Haas Grotesk Semibold";
+        font-size: 3rem;
+        letter-spacing: 8px;
+        text-align: center;
+        opacity: 0.8;
+      }
+
+      input:focus {
+        outline: none;
+      }
+
+      .btn {
+        background: #f4f4f4;
+        border-radius: 10px;
+        border: none;
+        width: 100%;
+        padding: 1rem;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+        cursor: pointer;
+        color: #a1a5aa;
+      }
+
+      .footer-container {
+        width: 100%;
+        margin: 20rem auto 1rem;
+      }
+
+      .footer-container .footer-content {
+        margin: 0 auto;
+        width: 90%;
+      }
+
+      .text-white {
+        color: #ffffff;
+      }
+
+      /* Text Decoration */
+      .no-deco {
+        text-decoration: none;
+      }
+
+      /* Align */
+      .text-center {
+        text-align: center;
+      }
+
+      /* Responsive Code */
+      @media only screen and (max-width: 1390px) {
         .container {
-            margin-top: 80px;
-            margin-bottom: 20px;
-            padding: 0 98px;
-            overflow-y: hidden;
+          width: 30%;
         }
+      }
 
-        .logo {
-            color: #FFFFFF;
-            margin: 0 0 4.25rem 0;
+      @media only screen and (max-width: 1180px) {
+        .container {
+          width: 35%;
         }
+      }
 
-        .card {
-            background: #FFFFFF;
-            border-radius: 10px;
-            width: 450px;
-            height: 400px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 28px 26px 36px 26px;
+      @media only screen and (max-width: 1070px) {
+        .container {
+          width: 40%;
         }
+      }
 
-        .title {
-            padding: 44px 0 32px 0;
-            font-family: 'Neue Haas Grotesk Text Pro';
+      @media only screen and (max-width: 940px) {
+        .container {
+          width: 45%;
         }
+      }
 
-        .title h1 {
-            text-align: center;
-            margin: 0 0 16px 0;
-            height: 40px;
-            font-style: normal;
-            font-weight: 500;
-            font-size: 32px;
-            line-height: 40px;
-            color: #1F1F23;
+      @media only screen and (max-width: 780px) {
+        .container {
+          width: 50%;
         }
+      }
 
-        .title p {
-            color: #666F77;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 20px;
+      @media only screen and (max-width: 660px) {
+        .container {
+          width: 60%;
         }
+      }
 
-        .toggle {
-            margin: 0;
+      @media only screen and (max-width: 580px) {
+        .container {
+          width: 70%;
         }
+      }
 
-        .toggle p {
-            margin: 0;
+      @media only screen and (max-width: 520px) {
+        .container {
+          width: 80%;
         }
-
-        .terms {
-            margin: 0 22px;
-        }
-
-        .terms img {
-            width: 24px;
-            height: 24px;
-            margin: 1rem 1rem 0 0;
-        }
-
-        .btn {
-            background: #F4F4F4;
-            border-radius: 10px;
-            margin: 48px 22px 0;
-            padding: 24px 0;
-            font-weight: 400;
-            font-size: 24px;
-            line-height: 22px;
-            color: #A1A5AA;
-        }
-
-        .btn-1 {
-            justify-content: space-between;
-        }
-
-        .footer {
-            margin-top: 4rem;
-        }
-
-        /* Text Color */
-        .grey {
-            color: #666F77;
-        }
-
-        .blue {
-            color: #003eff;
-        }
-
-        .white {
-            color: #FFFFFF;
-        }
-
-        /* Text Decoration */
-        .no-deco {
-            text-decoration: none;
-        }
-
-        /* Display */
-        .flex {
-            display: flex;
-        }
-
-        /* Justify Content */
-        .space-between {
-            justify-content: space-between;
-        }
-
-        /* Align */
-        .text-center {
-            text-align: center;
-        }
-
-        /* Margin */
-        .m-0 {
-            margin: 0;
-        }
-
-        .mt-0 {
-            margin-top: 0;
-        }
-
-        .mr-0 {
-            margin-right: 0;
-        }
-
-        .mb-0 {
-            margin-bottom: 0;
-        }
-
-        .ml-0 {
-            margin-left: 0;
-        }
-
-        /* Padding */
-        .p-0 {
-            Padding: 0;
-        }
-
-        .pt-0 {
-            Padding-top: 0;
-        }
-
-        .pr-0 {
-            Padding-right: 0;
-        }
-
-        .pb-0 {
-            Padding-bottom: 0;
-        }
-
-        .pl-0 {
-            Padding-left: 0;
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="logo text-center">
-            <h2>leatherback</h2>
+      <div class="logo text-center">
+        <a href="https://leatherback.co"
+          ><img
+            src="./assets/images/leatherback-logo-white.png"
+            alt="Leatherback Logo"
+        /></a>
+      </div>
+      <div class="card">
+        <div class="title text-center">
+          <h1>Enter OTP</h1>
+          <p>Please enter the 6 digit confirmation code sent to</p>
+          <p
+            style="
+              color: #1f1f23;
+              font-family: 'Neue Haas Grotesk Semibold';
+              margin-top: 0.5rem;
+            "
+          >
+            Oy*********@yahoo.com
+          </p>
         </div>
-        <div class="card">
-            <div class="title text-center">
-                <h1>Enter OTP</h1>
-            </div>
-            <div class="text-center">
-                <p>Please enter the 6 digit code sent to</p>
-                <p>oyindamola@gmail.com</p>
-            </div>            
-            <div class="text-center">
-                <p>000000</p>
-            </div>
-            <div class="verify btn text-center">
-                Create account
-            </div>
-            <div class="text-center">
-                <p class="grey">You didn't receive the code?
-                    <a href="#" class="blue no-deco">Resend</a>
-                </p>
-            </div>            
+        <div class="form text-center">
+          <input
+            type="text"
+            id="otp"
+            placeholder="000000"
+            oninput="toggleBtn()"
+          />
+          <button class="btn text-center" id="submit-btn" disabled>
+            Verify
+          </button>
+          <p
+            class="text-center"
+            style="color: #666f77; font-size: 12px; margin-top: 2rem"
+          >
+            You didn't receive the code?
+            <a href="#" style="color: #003eff">Resend</a>
+          </p>
         </div>
+      </div>
     </div>
-</body>
+    <div class="footer-container text-white">
+      <div
+        class="footer-content"
+        style="display: flex; justify-content: space-between"
+      >
+        <p>@ 2022 Leatherback</p>
+        <p>
+          <a
+            href="https://leatherback.co/privacy-policy"
+            class="no-deco text-white"
+            >Privacy Policy</a
+          >
+        </p>
+      </div>
+    </div>
 
+    <script>
+      const otpInput = document.querySelector("#otp");
+      const submitBtn = document.querySelector("#submit-btn");
+      restrictChars(otpInput, "1234567890");
+
+      function restrictChars(input, chars) {
+        input.addEventListener("keypress", function (e) {
+          e.preventDefault();
+          var character = String.fromCharCode(e.keyCode);
+          var isValid = chars.indexOf(character) != -1;
+          if (isValid && input.value.length <= 5) {
+            input.value += character;
+          }
+
+          if (otpInput.value.length === 6) {
+            submitBtn.disabled = false;
+            submitBtn.style.background = "#003EFF";
+            submitBtn.style.color = "#ffffff";
+          } else {
+            submitBtn.disabled = true;
+            submitBtn.style.background = "#f4f4f4";
+            submitBtn.style.color = "#a1a5aa";
+          }
+        });
+      }
+
+      function toggleBtn() {
+          console.log('checking here', otpInput.value)
+        if (otpInput.value.length === 6) {
+            submitBtn.disabled = false;
+            submitBtn.style.background = "#003EFF";
+            submitBtn.style.color = "#ffffff";
+          } else {
+            submitBtn.disabled = true;
+            submitBtn.style.background = "#f4f4f4";
+            submitBtn.style.color = "#a1a5aa";
+          }
+      }
+    </script>
+  </body>
 </html>

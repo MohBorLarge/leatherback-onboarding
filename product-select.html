@@ -21,8 +21,14 @@
         src: url("https://leatherbackstorage.blob.core.windows.net/frontend/fonts/NHaasGroteskTXPro-75Bd.ttf");
       }
 
+      body {
+        background-image: url(./assets/bg/bg-2.png);
+        background-size: cover;
+      }
+
       .container {
-        margin: 5rem 0 0 0;
+        margin: 5rem auto 0;
+        width: 100%;
         font-family: "Neue Haas Grotesk";
       }
       .logo {
@@ -47,8 +53,10 @@
 
       .card-1 {
         width: 400px;
-        margin-right: 20px;
+        margin-right: 2rem;
+        margin-bottom: 4rem;
         border-radius: 10px;
+        overflow-y: hidden;
       }
       .header {
         padding-bottom: 20px;
@@ -65,28 +73,42 @@
       .card-bottom {
         padding-right: 32px;
         padding-left: 32px;
+        transform: translateY(140px);
+        cursor: pointer;
+      }
+      .card-bottom:hover {
+        transform: translate(0);
+        transition: 0.3s ease-in-out;
       }
       .info {
-        background-color: #daf0fa;
         padding-top: 40px;
       }
 
-      .dev-portal {
-        padding-top: 40%;
-        background-color: #ffe8ea;
+      .dev-portal,
+      .pay-r {
+        padding-top: 60%;
         padding-bottom: 5%;
       }
       .desc {
         margin-top: 20%;
       }
-      .pay-r {
-        padding-top: 40%;
-        padding-bottom: 5%;
-        background-color: #fff6e4;
+      .number {
+        margin: 0%;
+        padding-bottom: 12px;
       }
 
       .image img {
         width: 400px;
+      }
+      .coming-soon {
+        border-radius: 10px;
+        color: #D98F00;
+        padding: 15px;
+        background: #fff6e4;
+        border: 1px solid rgba(102, 111, 119, 0.1);
+        position: absolute;
+        left: 30%;
+        top: 25%;
       }
       /* Text Deco */
       .text-natural {
@@ -138,6 +160,78 @@
         margin-left: auto;
         margin-right: auto;
       }
+      /* Responsive Code */
+      @media only screen and (max-width: 1390px) {
+        .cards {
+          display: block;
+        }
+        .card-1 {
+          margin-right: 0;
+        }
+      }
+
+      @media only screen and (max-width: 1180px) {
+        .cards {
+          display: block;
+        }
+        .card-1 {
+          margin-right: 0;
+        }
+      }
+
+      @media only screen and (max-width: 1070px) {
+        .cards {
+          display: block;
+        }
+        .card-1 {
+          margin-right: 0;
+        }
+      }
+
+      @media only screen and (max-width: 940px) {
+        .cards {
+          display: block;
+        }
+        .card-1 {
+          margin-right: 0;
+        }
+      }
+
+      @media only screen and (max-width: 780px) {
+        .cards {
+          display: block;
+        }
+        .card-1 {
+          margin-right: 0;
+        }
+      }
+
+      @media only screen and (max-width: 660px) {
+        .cards {
+          display: block;
+        }
+        .card-1 {
+          margin-right: 0;
+        }
+      }
+
+      @media only screen and (max-width: 580px) {
+        .cards {
+          display: block;
+        }
+        .card-1 {
+          margin-right: 0;
+        }
+      }
+
+      @media only screen and (max-width: 520px) {
+        .cards {
+          display: block;
+        }
+        .card-1 {
+          margin-right: 0;
+        }
+      }
     </style>
   </head>
 
@@ -163,7 +257,7 @@
           <div class="card-bottom info">
             <div class="flex justify-between header">
               <div class="block m-0">
-                <p class="m-0">01.</p>
+                <p class="number">01.</p>
                 <h2 class="m-0">Leatherback</h2>
               </div>
               <div class="m-0 right-arrow">
@@ -182,19 +276,44 @@
           <div class="image">
             <img src="./assets/sign-up/DEV.png" alt="" />
           </div>
-          <div class="card-bottom dev-portal">
-            <p>02.</p>
-            <h2>Dev Portal</h2>
+          <div class="card-bottom info">
+            <div class="flex justify-between header">
+              <div class="block m-0">
+                <p class="number">02.</p>
+                <h2 class="m-0">Dev Portal</h2>
+              </div>
+              <div class="m-0 right-arrow">
+                <img src="./assets/icons/Arrow.png" alt="" />
+              </div>
+            </div>
+            <div>
+              <p class="grey text-natural desc">
+                Easy-to-use multi-currency account optimized for Individuals,
+                SMEs, local corporations.
+              </p>
+            </div>
           </div>
         </div>
-        <div class="card-1" style="background-color: #fff6e4">
-          <div class="image">
+        <div class="card-1" style="background-color: #fff6e4; margin-right: 0">
+          <div class="image" style="position: relative;">
             <img src="./assets/sign-up/PayR.png" alt="" />
+            <p class="coming-soon">Coming Soon</p>
           </div>
-          <div class="card-bottom pay-r">
+          <div class="card-bottom info">
+            <div class="flex justify-between header">
+              <div class="block m-0">
+                <p class="number">03.</p>
+                <h2 class="m-0">PayR</h2>
+              </div>
+              <div class="m-0 right-arrow">
+                <img src="./assets/icons/Arrow.png" alt="" />
+              </div>
+            </div>
             <div>
-              <p>03.</p>
-              <h2>PayR</h2>
+              <p class="grey text-natural desc">
+                Easy-to-use multi-currency account optimized for Individuals,
+                SMEs, local corporations.
+              </p>
             </div>
           </div>
         </div>

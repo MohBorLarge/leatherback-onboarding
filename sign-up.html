@@ -93,15 +93,14 @@
         .field input {
             box-shadow: none;
             border: none;
-            font-size: 14px;
+            font-size: 13px;
+            letter-spacing: .2px;
+            width: 100%;
+            font-family: 'Neue Haas Grotesk';
         }
 
         .field input:focus {
             outline: none;
-        }
-
-        .field input::placeholder {
-            color: #666f77;
         }
 
         .field p {
@@ -152,7 +151,8 @@
             border-radius: 10px;
             padding: 1rem;
             border: 1px solid rgba(102, 111, 119, 0.1);
-            margin-top: -0.5rem;
+            margin-top: 0.5rem;
+            left: 0;
             width: 105%;
             z-index: 1000;
             display: none;
@@ -205,28 +205,18 @@
             font-weight: 500;
             font-size: 16px;
             line-height: 22px;
+            cursor: pointer;
             color: #a1a5aa;
         }
 
         .footer-container {
-            position: absolute;
             width: 100%;
-            margin: 0 auto;
-            bottom: 2%;
+            margin: 6rem auto 1rem;
         }
 
         .footer-container .footer-content {
             margin: 0 auto;
             width: 90%;
-        }
-
-        /* Text Color */
-        .grey {
-            color: #666f77;
-        }
-
-        .blue {
-            color: #003eff;
         }
 
         .text-white {
@@ -238,65 +228,9 @@
             text-decoration: none;
         }
 
-        /* Display */
-        .flex {
-            display: flex;
-        }
-
-        /* Justify Content */
-        .space-between {
-            justify-content: space-between;
-        }
-
         /* Align */
         .text-center {
             text-align: center;
-        }
-
-        .text-left {
-            text-align: left;
-        }
-
-        /* Margin */
-        .m-0 {
-            margin: 0;
-        }
-
-        .mt-0 {
-            margin-top: 0;
-        }
-
-        .mr-0 {
-            margin-right: 0;
-        }
-
-        .mb-0 {
-            margin-bottom: 0;
-        }
-
-        .ml-0 {
-            margin-left: 0;
-        }
-
-        /* Padding */
-        .p-0 {
-            padding: 0;
-        }
-
-        .pt-0 {
-            padding-top: 0;
-        }
-
-        .pr-0 {
-            padding-right: 0;
-        }
-
-        .pb-0 {
-            padding-bottom: 0;
-        }
-
-        .pl-0 {
-            padding-left: 0;
         }
 
         /* Checkbox styling */
@@ -307,8 +241,8 @@
 
         .checkbox input {
             -webkit-appearance: none;
-            width: 1rem;
-            height: 1rem;
+            width: 1.2rem;
+            height: 1.2rem;
             border: 1px solid #a1a5aa;
             border-radius: 3px;
             vertical-align: sub;
@@ -318,18 +252,14 @@
         }
 
         .checkbox input:checked {
-            background-color: hsl(0, 0%, 40%);
-            border-color: hsl(0, 0%, 40%);
+            background-color: #003EFF;
+            border-color: #003EFF;
+            width: 1.2rem;
+            height: 1.2rem;
         }
 
         .checkbox input:checked+label {
             font-weight: 600;
-        }
-
-        .checkbox input:checked:focus,
-        .checkbox input:checked:hover {
-            box-shadow: 0 0 0 3px hsl(0, 0%, 85%);
-            border-color: hsl(0, 0%, 40%);
         }
 
         .checkbox input:after {
@@ -341,12 +271,6 @@
             background-size: 40px;
             background-repeat: no-repeat;
             background-position: center;
-        }
-
-        .checkbox input:focus,
-        .checkbox input:hover {
-            box-shadow: 0 0 0 3px hsl(0, 0%, 92%);
-            border-color: hsl(0, 0%, 55%);
         }
 
         .checkbox label {
@@ -365,11 +289,87 @@
         }
 
         .phone-number .country-code {
-            width: 85%;
+            width: 30%;
+            margin-right: 4%;
         }
 
         .phone-number .number {
-            width: 53%;
+            width: 66%;
+        }
+
+        .password-btn {
+            padding: 5px 1rem !important;
+            font-size: 12px;
+            text-align: center;
+            font-weight: 500;
+            position: absolute;
+            right: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .password-check-area {
+            display: none;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .password-check-area .password-check-item {
+            font-size: 12px;
+            border-radius: 5px;
+            color: #A1A5AA;
+            padding: 5px 0;
+            text-align: center;
+            border: 1px solid rgba(161, 165, 170, 0.2);
+        }
+
+        /* Responsive Code */
+        @media only screen and (max-width: 1390px) {
+            .container {
+                width: 30%;
+            }
+        }
+
+        @media only screen and (max-width: 1180px) {
+            .container {
+                width: 35%;
+            }
+        }
+
+        @media only screen and (max-width: 1070px) {
+            .container {
+                width: 40%;
+            }
+        }
+
+        @media only screen and (max-width: 940px) {
+            .container {
+                width: 45%;
+            }
+        }
+
+        @media only screen and (max-width: 780px) {
+            .container {
+                width: 50%;
+            }
+        }
+
+        @media only screen and (max-width: 660px) {
+            .container {
+                width: 60%;
+            }
+        }
+
+        @media only screen and (max-width: 580px) {
+            .container {
+                width: 70%;
+            }
+        }
+
+        @media only screen and (max-width: 520px) {
+            .container {
+                width: 80%;
+            }
         }
     </style>
 </head>
@@ -395,12 +395,12 @@
                         <div style="display: flex; align-items: center">
                             <img src="./assets/icons/Location.svg" />
                             <p style="
-                    font-size: 14px;
+                    font-size: 13px;
                     color: #666f77;
                     display: flex;
-                    align-items: center;
+                    align-items: center; font-family: 'Neue Haas Grotesk';
                   " id="country-placeholder">
-                                Select country of residence/incoporation
+                                Select country of incoporation or residence
                             </p>
                         </div>
                         <img src="./assets/icons/Caret-down.svg" style="width: 0.8rem" />
@@ -413,24 +413,30 @@
                     </div>
                 </div>
 
-                <div class="field">
-                    <img src="./assets/icons/Email.svg" />
-                    <input type="email" placeholder="Email address" />
+                <div>
+                    <div class="field" id="email-field">
+                        <img src="./assets/icons/Email.svg" />
+                        <input type="email" placeholder="Email address" id="email" onblur="validateEmailAddress()" oninput="validateEmailAddress()" />
+                    </div>
+                    <p style="font-size: 12px; margin: 5px 0 1rem; color: red; display: none;" id="not-email">Please enter a valid email address</p>
                 </div>
+
                 <div class="phone-number">
-                    <div style="position: relative" id="country-code-div">
-                        <div class="country-code field" style="
-                  justify-content: space-between;
-                  align-items: center;
-                  cursor: pointer;
-                " onclick="toggleCountryCodeDropdown('countryCode')">
+                    <div class="country-code field" style="position: relative" id="country-code-div">
+                        <div style="
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            cursor: pointer;
+                            width: 100%;
+                            " onclick="toggleCountryCodeDropdown('countryCode')">
                             <img src="./assets/icons/Phone.svg" />
                             <p style="
-                    font-size: 14px;
-                    color: #666f77;
-                    display: flex;
-                    align-items: center;
-                  " id="country-code-placeholder">
+                                font-size: 13px;
+                                color: #666f77;
+                                display: flex;
+                                align-items: center; font-family: 'Neue Haas Grotesk';
+                            " id="country-code-placeholder">
                                 +00
                             </p>
                             <img src="./assets/icons/Caret-down.svg" style="width: 0.7rem" />
@@ -438,25 +444,38 @@
 
                         <div id="country-code-select-dropdown" class="country-code-select-dropdown">
                             <input type="text" placeholder="Search code" class="country-code-search-input"
-                                id="search-code-input" oninput="filterCountries('country-code')" />
+                                id="search-code-input" oninput="filterCountries('country-code')" style="width: 80%;" />
                             <div id="country-codes" class="code-list"></div>
                         </div>
                     </div>
-                    <div class="number field">
-                        <input type="text" placeholder="Phone number" />
+                    <div class="number field" id="phone-number-field">
+                        <input type="text" placeholder="Phone number" id="phone-number" onblur="validatePhoneNumber()" oninput="validatePhoneNumber()" />
                     </div>
                 </div>
-                <div class="field">
+                <p style="font-size: 12px; margin: -2px 0 1rem; color: red; display: none;" id="not-number">Please enter a valid phone number</p>
+
+                <div class="field" style="position: relative;">
                     <img src="./assets/icons/Lock.svg" />
-                    <input type="password" placeholder="Create Password" />
+                    <input type="password" placeholder="Create Password" id="password-input" oninput="performPasswordCheck()" />
+                    <button class="password-btn" id="password-btn" onclick="togglePasswordVisibility()" style="background: #e6fff0; color: #2DB260;">
+                        show
+                    </button>
+                </div>
+                <div id="password-check-area" class="password-check-area">
+                    <div class="password-check-item" id="eight-characters">8 Characters</div>
+                    <div class="password-check-item" id="special-characters">Special Characters</div>
+                    <div class="password-check-item" id="uppercase-characters">Uppercase</div>
+                    <div class="password-check-item" id="lowercase-characters">Lowercase</div>
+                    <div class="password-check-item" id="number-characters">Number</div>
                 </div>
                 <div class="checkbox">
                     <input type="checkbox" id="cb3" name="cb3" />
                     <label for="cb3">By creating account, you agree to accept Leatherback’s
-                        <a href="https://leatherback.co/terms-conditions">Terms & Conditions</a> and
+                        <a href="https://leatherback.co/terms-conditions">Terms & Conditions</a>
+                        and
                         <a href="https://leatherback.co/privacy-policy">Privacy Policy</a></label>
                 </div>
-                <button class="btn text-center">Create account</button>
+                <button class="btn text-center" id="submit-btn" disabled>Create account</button>
             </div>
         </div>
         <p class="text-white text-center">
@@ -464,7 +483,7 @@
         </p>
     </div>
     <div class="footer-container text-white">
-        <div class="footer-content flex space-between">
+        <div class="footer-content" style="display: flex; justify-content: space-between;">
             <p>@ 2022 Leatherback</p>
             <p>
                 <a href="https://leatherback.co/privacy-policy" class="no-deco text-white">Privacy Policy</a>
@@ -475,19 +494,28 @@
     <script>
         var countrySelected = "";
         var countryCodeSelected = "";
-        var phoneNumber = "";
-        var email = "";
         var password = "";
         var allCountries = [];
         var allCountryCodes = [];
         var filteredCountries = [];
         var filteredCountryCodes = [];
+        var passwordVisibility = false;
+        var passwordIsValid = false;
         var y = document.querySelector("#country-code-select-dropdown");
         var x = document.querySelector("#country-select-dropdown");
         var countryDiv = document.querySelector("#country-div");
         var countryCodeDiv = document.querySelector("#country-code-div");
         const searchInput = document.querySelector("#search-input");
         const searchCodeInput = document.querySelector("#search-code-input");
+        const passwordBtn = document.querySelector('#password-btn');
+        const passwordInput = document.querySelector('#password-input');
+        const passwordCheckArea = document.querySelector('#password-check-area');
+        const email = document.querySelector('#email');
+        var emailIsValid = false;
+        const phoneNumber = document.querySelector('#phone-number');
+        var phoneNumberIsValid = false;
+        const submitBtn = document.querySelector('#submit-btn');
+        const checkbox = document.querySelector('#cb3');
 
         function getAllCountries() {
             fetch("https://restcountries.com/v2/all")
@@ -542,17 +570,17 @@
             let output = "";
             countries.forEach((country) => {
                 output += `
-                    <div style="display: flex; align-items: center" class="country" onclick="selectCountryOrCode('${country.name
+                  <div style="display: flex; align-items: center" class="country" onclick="selectCountryOrCode('${country.name
                     }', '${country.flag}', '${country.callingCodes[0]
                     }', '${bindType}')">
-                                <img src="${country.flag}" width="20" alt="${country.name
+                              <img src="${country.flag}" width="20" alt="${country.name
                     }"
-                                    style="margin-right: 1rem">
-                                <p style="margin: 0; color: #666F77; font-size: 12px;">${bindType === "country"
+                                  style="margin-right: 1rem">
+                              <p style="margin: 0; color: #666F77; font-size: 12px;">${bindType === "country"
                         ? country.name
                         : `+ ${country.callingCodes[0]}`
                     }</p>
-                            </div>`;
+                          </div>`;
             });
 
             selectDrop.innerHTML = output;
@@ -574,14 +602,13 @@
         }
 
         function selectCountryOrCode(country, flag, countryCode, bindType) {
-            console.log("entering here", country);
             if (bindType === "country") {
                 countrySelected = country;
                 document.querySelector(
                     "#country-placeholder"
                 ).innerHTML = `<img src="${flag}" width="20" alt="${country}"
-                                    style="margin-right: 1rem">
-                                <p style="margin: 0; color: #1f1f23; font-size: 14px;">${country}</p>`;
+                                  style="margin-right: 1rem">
+                              <p style="margin: 0; color: #1f1f23; font-size: 14px;">${country}</p>`;
                 x.style.display = "none";
             } else {
                 countryCodeSelected = countryCode;
@@ -589,6 +616,100 @@
                     "#country-code-placeholder"
                 ).innerHTML = `<p style="margin: 0; color: #1f1f23; font-size: 14px;">+${countryCode}</p>`;
                 y.style.display = "none";
+            }
+        }
+
+        function performPasswordCheck() {
+            const eight = document.querySelector('#eight-characters');
+            var eightIsValid = false;
+            const special = document.querySelector('#special-characters');
+            var specialIsValid = false;
+            const uppercase = document.querySelector('#uppercase-characters');
+            var uppercaseIsValid = false;
+            const lowercase = document.querySelector('#lowercase-characters');
+            var lowercaseIsValid = false;
+            const number = document.querySelector('#number-characters');
+            var numberIsValid = false;
+
+            // Validate password length
+            if (passwordInput.value.length > 0) {
+                passwordCheckArea.style.display = 'grid'
+            } else {
+                passwordCheckArea.style.display = 'none'
+            }
+
+            if(passwordInput.value.length >= 8) {
+                eight.style.background = '#E6FFF0';
+                eight.style.border = '1px solid rgba(45, 178, 96, 0.2)';
+                eight.style.color = '#2DB260';
+                eightIsValid = true;
+            } else {
+                eight.style.background = '#FFFFFF';
+                eight.style.border = '1px solid rgba(161, 165, 170, 0.2)';
+                eight.style.color = '#A1A5AA';
+                eightIsValid = false;
+            }
+
+            // Validate password characters
+            const special_character_pattern = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+            if (special_character_pattern.test(passwordInput.value)) {
+                special.style.background = '#E6FFF0';
+                special.style.border = '1px solid rgba(45, 178, 96, 0.2)';
+                special.style.color = '#2DB260';
+                specialIsValid = true;
+            } else {
+                special.style.background = '#FFFFFF';
+                special.style.border = '1px solid rgba(161, 165, 170, 0.2)';
+                special.style.color = '#A1A5AA';
+                specialIsValid = false;
+            }
+
+            // validate uppercase
+            const uppercase_pattern = /[A-Z]/;
+            if (uppercase_pattern.test(passwordInput.value)) {
+                uppercase.style.background = '#E6FFF0';
+                uppercase.style.border = '1px solid rgba(45, 178, 96, 0.2)';
+                uppercase.style.color = '#2DB260';
+                uppercaseIsValid = true;
+            } else {
+                uppercase.style.background = '#FFFFFF';
+                uppercase.style.border = '1px solid rgba(161, 165, 170, 0.2)';
+                uppercase.style.color = '#A1A5AA';
+                uppercaseIsValid = false;
+            }
+
+            // validate lowercase
+            const lowercase_pattern = /[a-z]/;
+            if (lowercase_pattern.test(passwordInput.value)) {
+                lowercase.style.background = '#E6FFF0';
+                lowercase.style.border = '1px solid rgba(45, 178, 96, 0.2)';
+                lowercase.style.color = '#2DB260';
+                lowercaseIsValid = true;
+            } else {
+                lowercase.style.background = '#FFFFFF';
+                lowercase.style.border = '1px solid rgba(161, 165, 170, 0.2)';
+                lowercase.style.color = '#A1A5AA';
+                lowercaseIsValid = false;
+            }
+
+            // validate lowercase
+            const number_pattern = /[0-9]/;
+            if (number_pattern.test(passwordInput.value)) {
+                number.style.background = '#E6FFF0';
+                number.style.border = '1px solid rgba(45, 178, 96, 0.2)';
+                number.style.color = '#2DB260';
+                numberIsValid = true;
+            } else {
+                number.style.background = '#FFFFFF';
+                number.style.border = '1px solid rgba(161, 165, 170, 0.2)';
+                number.style.color = '#A1A5AA';
+                numberIsValid = false;
+            }
+
+            if(eightIsValid && specialIsValid && uppercaseIsValid && lowercaseIsValid && numberIsValid) {
+                passwordIsValid = true;
+            } else {
+                passwordIsValid = false;
             }
         }
 
@@ -600,6 +721,64 @@
                 y.style.display = "none";
             }
         });
+
+        document.addEventListener("input", function (e) {
+            if(checkbox.checked && countrySelected.length > 0 && email.value.length > 0 && emailIsValid && phoneNumber.value.length > 0 && phoneNumberIsValid && countryCodeSelected.length > 0 && passwordInput.value.length > 0 && passwordIsValid) {
+            submitBtn.disabled = false;
+            submitBtn.style.background = '#003EFF';
+            submitBtn.style.color = '#ffffff';
+        } else {
+            submitBtn.disabled = true;
+            submitBtn.style.background = '#f4f4f4';
+            submitBtn.style.color = '#a1a5aa';
+        }
+        });
+
+        function togglePasswordVisibility() {
+            if(!passwordVisibility) {
+                passwordVisibility = true;
+                passwordBtn.style.background = '#ffcccb';
+                passwordBtn.style.color = 'red'
+                passwordBtn.innerHTML = 'hide'
+                passwordInput.type = 'text'
+            } else {
+                passwordVisibility = false;
+                passwordBtn.style.background = '#E6FFF0';
+                passwordBtn.style.color = '#2DB260'
+                passwordBtn.innerHTML = 'show'
+                passwordInput.type = 'password'
+            }
+        }
+
+        function validateEmailAddress() {
+            const emailField = document.querySelector('#email-field');
+            const notEmail = document.querySelector('#not-email');
+
+            if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)) {
+                emailField.style.border = '1px solid red';
+                notEmail.style.display = 'block'
+                emailIsValid = false;
+            } else {
+                emailField.style.border = '1px solid rgba(102, 111, 119, 0.1)';
+                notEmail.style.display = 'none'
+                emailIsValid = true;
+            }
+        }
+
+        function validatePhoneNumber() {
+            const phoneNumberField = document.querySelector('#phone-number-field');
+            const notNumber = document.querySelector('#not-number');
+
+            if(!/^[0-9]*$/.test(phoneNumber.value)) {
+                phoneNumberField.style.border = '1px solid red';
+                notNumber.style.display = 'block'
+                phoneNumberIsValid = false;
+            } else {
+                phoneNumberField.style.border = '1px solid rgba(102, 111, 119, 0.1)';
+                notNumber.style.display = 'none'
+                phoneNumberIsValid = true;
+            }
+        }
     </script>
 </body>
 

@@ -23,9 +23,11 @@
       body {
         background-image: url(./assets/bg/bg-2.png);
         background-size: cover;
+        height: 100vh;
       }
       .container {
-        margin: 5rem 0 0 0;
+        margin: 5rem auto 0;
+        width: 100%;
         font-family: "Neue Haas Grotesk";
       }
       .logo {
@@ -49,11 +51,19 @@
       }
 
       .card-1 {
-        width: 341px;
+        padding: 2.5rem 2rem 1rem;
+        height: 500px;
+        width: 400px;
         margin-right: 2rem;
-        padding: 2.5rem 32px 1rem 32px;
+        margin-bottom: 4rem;
         border-radius: 10px;
+        overflow-y: hidden;
       }
+      .individual,
+      .sole-trader {
+        margin-right: 2rem;
+      }
+
       .header {
         border-bottom: 1px solid rgba(102, 111, 119, 0.1);
       }
@@ -148,6 +158,80 @@
         margin-bottom: 16px;
         color: #666f77;
       }
+
+
+      /* Responsive Code */
+      @media only screen and (max-width: 1390px) {
+        .cards {
+          display: block;
+        }
+        .card-1 {
+          margin-right: 0;
+        }
+      }
+
+      @media only screen and (max-width: 1180px) {
+        .cards {
+          display: block;
+        }
+        .card-1 {
+          margin-right: 0;
+        }
+      }
+
+      @media only screen and (max-width: 1070px) {
+        .cards {
+          display: block;
+        }
+        .card-1 {
+          margin-right: 0;
+        }
+      }
+
+      @media only screen and (max-width: 940px) {
+        .cards {
+          display: block;
+        }
+        .card-1 {
+          margin-right: 0;
+        }
+      }
+
+      @media only screen and (max-width: 780px) {
+        .cards {
+          display: block;
+        }
+        .card-1 {
+          margin-right: 0;
+        }
+      }
+
+      @media only screen and (max-width: 660px) {
+        .cards {
+          display: block;
+        }
+        .card-1 {
+          margin-right: 0;
+        }
+      }
+
+      @media only screen and (max-width: 580px) {
+        .cards {
+          display: block;
+        }
+        .card-1 {
+          margin-right: 0;
+        }
+      }
+
+      @media only screen and (max-width: 520px) {
+        .cards {
+          display: block;
+        }
+        .card-1 {
+          margin-right: 0;
+        }
+      }
     </style>
   </head>
 
@@ -159,9 +243,7 @@
         </div>
         <div class="hero m-auto text-center">
           <h2>Select an Entity type</h2>
-          <p class="description grey">
-            Choose an enttity and let us c
-          </p>
+          <p class="description grey">Choose an enttity and let us c</p>
         </div>
       </div>
 
